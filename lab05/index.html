@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <!-- Responsive-ийн хамгийн чухал мөр -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 05: Responsive вэб хуудас</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="#">МиниСайт</a>
+
+    <!-- Гар утасны цэс: JavaScript-гүй, checkbox ашигласан -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-button" aria-label="Цэс нээх">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../index.html">Нүүр</a></li>
+        <li><a href="#about">Миний тухай</a></li>
+        <li><a href="#services">Үйлчилгээ</a></li>
+        <li><a href="#contact">Холбоо барих</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Дэлгэц бүрт зохицдог вэб хуудас</h1>
+        <p>Гар утас, таблет, компьютер дээр ижил сайхан харагддаг, хэвтээ скролл үүсгэдэггүй хуудас.</p>
+        <a class="btn" href="#services">Дэлгэрэнгүй</a>
+      </div>
+      <div class="hero-box" aria-hidden="true">Зураг</div>
+    </section>
+
+    <section id="services" class="services">
+      <h2>Үйлчилгээ</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Mobile-First</h3>
+          <p>Эхлээд жижиг дэлгэцэнд зориулж, дараа нь томруулж загварчилна.</p>
+        </article>
+        <article class="card">
+          <h3>Media Queries</h3>
+          <p>Дэлгэцийн өргөнөөс хамаарч өөр өөр загвар хэрэглэнэ.</p>
+        </article>
+        <article class="card">
+          <h3>Уян хатан Grid</h3>
+          <p>Картууд 1, 2, 3 баганатай болж өөрчлөгдөнө.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>Миний тухай</h2>
+      <p>Би Мэдээллийн технологийн 2-р курсийн оюутан. Вэб хөгжүүлэлтийн анхан шатны мэдлэгээ лабораторийн ажлаар бататгаж байна.</p>
+    </section>
+
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <p>&copy; 2026 Веб зохиомж хичээл.</p>
+  </footer>
+
+</body>
+</html>
