@@ -2,72 +2,71 @@
 <html lang="mn">
 <head>
   <meta charset="UTF-8">
-  <!-- Responsive-ийн хамгийн чухал мөр -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лаборатори 05: Responsive вэб хуудас</title>
+  <title>Монгол гольф | Лаб 5</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <a class="logo" href="#">МиниСайт</a>
+  <header class="header">
+    <a href="#" class="logo">⛳ Монгол гольф</a>
 
-    <!-- Гар утасны цэс: JavaScript-гүй, checkbox ашигласан -->
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
     <label for="menu-toggle" class="menu-button" aria-label="Цэс нээх">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </label>
 
-    <nav class="main-nav">
+    <nav class="nav">
       <ul>
-        <li><a href="../index.html">Нүүр</a></li>
-        <li><a href="#about">Миний тухай</a></li>
-        <li><a href="#services">Үйлчилгээ</a></li>
+        <li><a href="#home">Нүүр</a></li>
+        <li><a href="#places">Гольфын талаар</a></li>
+        <li><a href="#about">Бидний тухай</a></li>
         <li><a href="#contact">Холбоо барих</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <section id="home" class="hero">
+      <h1>Гольфын ертөнцөд тавтай морил</h1>
+      <p>Анхлан сурагчаас мэргэжлийн тоглогч хүртэл — гольфыг хамтдаа эхэлцгээе.</p>
+      <a href="#places" class="btn">Дэлгэрэнгүй</a>
+    </section>
 
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Дэлгэц бүрт зохицдог вэб хуудас</h1>
-        <p>Гар утас, таблет, компьютер дээр ижил сайхан харагддаг, хэвтээ скролл үүсгэдэггүй хуудас.</p>
-        <a class="btn" href="#services">Дэлгэрэнгүй</a>
+    <section id="places" class="section">
+      <h2>Гольфын талаар</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card-img img1"></div>
+          <h3>Гольфын талбай</h3>
+          <p>18 нүхтэй талбайн бүтэц, тоглолтын үндсэн дүрэм.</p>
+        </article>
+        <article class="card">
+          <div class="card-img img2"></div>
+          <h3>Анхан шатны сургалт</h3>
+          <p>Барьц, зогсолт, савлуурын үндсэн техник.</p>
+        </article>
+        <article class="card">
+          <div class="card-img img3"></div>
+          <h3>Тэмцээн, уулзалт</h3>
+          <p>Нээлттэй тэмцээн, найрсаг тоглолтын мэдээлэл.</p>
+        </article>
       </div>
-      <div class="hero-box" aria-hidden="true">Зураг</div>
     </section>
 
-    <section id="services" class="services">
-      <h2>Үйлчилгээ</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Mobile-First</h3>
-          <p>Эхлээд жижиг дэлгэцэнд зориулж, дараа нь томруулж загварчилна.</p>
-        </article>
-        <article class="card">
-          <h3>Media Queries</h3>
-          <p>Дэлгэцийн өргөнөөс хамаарч өөр өөр загвар хэрэглэнэ.</p>
-        </article>
-        <article class="card">
-          <h3>Уян хатан Grid</h3>
-          <p>Картууд 1, 2, 3 баганатай болж өөрчлөгдөнө.</p>
-        </article>
-      </div>
+    <section id="about" class="section alt">
+      <h2>Бидний тухай</h2>
+      <p>Бид Монголд гольфыг сурталчилж, шинэ тоглогчдод мэдээлэл, сургалт, хамт олны орчин бүрдүүлдэг.</p>
     </section>
 
-    <section id="about" class="about">
-      <h2>Миний тухай</h2>
-      <p>Би Мэдээллийн технологийн 2-р курсийн оюутан. Вэб хөгжүүлэлтийн анхан шатны мэдлэгээ лабораторийн ажлаар бататгаж байна.</p>
+    <section id="contact" class="section">
+      <h2>Холбоо барих</h2>
+      <p>И-мэйл: info@example.mn<br>Утас: 9999-0000</p>
     </section>
-
   </main>
 
-  <footer id="contact" class="site-footer">
-    <p>&copy; 2026 Веб зохиомж хичээл.</p>
+  <footer class="footer">
+    <p>&copy; 2026 Монгол гольф. Лаб 5 — Responsive вэб.</p>
   </footer>
 
 </body>

@@ -1,251 +1,152 @@
-/* ===== ЕРӨНХИЙ (Mobile-First: үндсэн загвар нь гар утасных) ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ===== Суурь (Mobile-First: гар утасны хэв маяг үндсэн) ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f9;
-  color: #222;
+  font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
+  color: #222;
+  background: #fff;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+img, .card-img { max-width: 100%; }
 
-h1, h2, h3 {
-  color: #1f3a5f;
-  line-height: 1.25;
-}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
 
-section {
-  padding: 32px 16px;
-}
-
-/* ===== HEADER + ЦЭС (гар утас) ===== */
-.site-header {
+/* ===== Header + навигаци (МОБАЙЛ: гамбургер цэс) ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 12px 16px;
-  background: #1f3a5f;
+  background: #1e5631;
   color: #fff;
 }
 
-.logo {
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: bold;
-  text-decoration: none;
-}
+.logo { font-size: 1.2rem; font-weight: 700; }
 
-/* checkbox-ыг нууна, гэхдээ label-ээр удирдана */
-.menu-toggle {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
+.menu-toggle { display: none; }
 
-/* Hamburger товч */
 .menu-button {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 8px;
   cursor: pointer;
+  padding: 6px;
 }
-
 .menu-button span {
-  display: block;
   width: 26px;
   height: 3px;
   background: #fff;
   border-radius: 2px;
 }
 
-/* Цэс: гар утсан дээр анхнаасаа нуугдсан */
-.main-nav {
-  display: none;
-  flex-basis: 100%;
+.nav {
+  width: 100%;
+  max-height: 0;          /* хаалттай үед нуугдана */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  margin-top: 8px;
-}
-
-.main-nav a {
+.nav a {
   display: block;
-  padding: 12px 8px;
-  color: #fff;
-  text-decoration: none;
+  padding: 12px 4px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+.menu-toggle:checked ~ .nav { max-height: 300px; }  /* товч дарахад нээгдэнэ */
 
-/* Hamburger дарахад цэс нээгдэнэ */
-.menu-toggle:checked ~ .main-nav {
-  display: block;
-}
-
-.menu-toggle:focus-visible ~ .menu-button {
-  outline: 2px solid #fff;
-}
-
-/* ===== HERO ===== */
+/* ===== Hero ===== */
 .hero {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  padding: 56px 16px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(rgba(30,86,49,.75), rgba(30,86,49,.75)), #4c9a5f;
 }
-
-.hero h1 {
-  font-size: 1.7rem;
-  margin-bottom: 12px;
-}
-
-.hero-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 160px;
-  background: #cfd9e8;
-  color: #1f3a5f;
-  border-radius: 12px;
-  font-weight: bold;
-}
+.hero h1 { font-size: 1.7rem; margin-bottom: 12px; }
+.hero p { margin-bottom: 20px; }
 
 .btn {
   display: inline-block;
-  margin-top: 16px;
-  padding: 10px 20px;
-  background: #1f3a5f;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
+  padding: 12px 24px;
+  background: #f5a623;
+  color: #222;
+  font-weight: 600;
+  border-radius: 6px;
 }
+.btn:hover { background: #ffb94d; }
 
-/* ===== КАРТ (гар утас: 1 багана) ===== */
-.services h2,
-.about h2 {
-  margin-bottom: 16px;
-}
+/* ===== Хэсгүүд ===== */
+.section { padding: 32px 16px; }
+.section.alt { background: #f1f6ef; }
+.section h2 { margin-bottom: 16px; color: #1e5631; }
 
-.card-grid {
+/* Картууд: гар утсанд 1 багана */
+.cards {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
 }
-
 .card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.card h3 {
-  margin-bottom: 8px;
-}
-
-.about {
+  padding: 12px;
+  border: 1px solid #dde3ea;
+  border-radius: 8px;
   background: #fff;
 }
+.card-img {
+  height: 160px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+.img1 { background: #3f8f4f; }
+.img2 { background: #9ccc65; }
+.img3 { background: #e6d3a3; }
+.card h3 { margin-bottom: 6px; }
 
-/* ===== FOOTER ===== */
-.site-footer {
-  padding: 20px 16px;
+.footer {
+  padding: 16px;
   text-align: center;
-  background: #1f3a5f;
+  background: #1e5631;
   color: #fff;
+  font-size: 0.9rem;
 }
 
-/* ===== ТАБЛЕТ (600px ба түүнээс дээш) ===== */
-@media (min-width: 600px) {
-  section {
-    padding: 40px 32px;
-  }
+/* ===== ТАБЛЕТ (768px-ээс дээш) ===== */
+@media (min-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .section { padding: 48px 32px; }
 
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero h1 {
-    font-size: 2.1rem;
-  }
+  .cards { grid-template-columns: repeat(2, 1fr); }  /* 2 багана */
 }
 
-/* ===== КОМПЬЮТЕР (900px ба түүнээс дээш) ===== */
-@media (min-width: 900px) {
-  .site-header {
-    padding: 16px 48px;
-    flex-wrap: nowrap;
-  }
+/* ===== КОМПЬЮТЕР (1024px-ээс дээш) ===== */
+@media (min-width: 1024px) {
+  /* Гамбургер цэс алга болж, хэвтээ цэс гарна */
+  .menu-button { display: none; }
 
-  /* Hamburger нуугдаж, цэс хэвтээ болно */
-  .menu-button {
-    display: none;
+  .nav {
+    width: auto;
+    max-height: none;
+    overflow: visible;
   }
-
-  .main-nav {
-    display: block;
-    flex-basis: auto;
-  }
-
-  .main-nav ul {
-    flex-direction: row;
-    gap: 8px;
-    margin-top: 0;
-  }
-
-  .main-nav a {
-    border-top: none;
+  .nav ul { display: flex; gap: 8px; }
+  .nav a {
     padding: 8px 14px;
+    border-top: none;
     border-radius: 6px;
   }
+  .nav a:hover { background: rgba(255, 255, 255, 0.15); }
 
-  .main-nav a:hover {
-    background: rgba(255, 255, 255, 0.2);
-  }
+  .header { padding: 14px 48px; }
+  .hero { padding: 96px 48px; }
+  .hero h1 { font-size: 2.8rem; }
 
-  section {
-    padding: 56px 48px;
-  }
+  .section { padding: 64px 48px; max-width: 1100px; margin: 0 auto; }
+  .section.alt { max-width: none; }
 
-  .hero {
-    flex-direction: row;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .hero-text,
-  .hero-box {
-    flex: 1;
-  }
-
-  .hero h1 {
-    font-size: 2.6rem;
-  }
-
-  .hero-box {
-    min-height: 280px;
-  }
-
-  .services,
-  .about {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
+  .cards { grid-template-columns: repeat(3, 1fr); }  /* 3 багана */
 }
